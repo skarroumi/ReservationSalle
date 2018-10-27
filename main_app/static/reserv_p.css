@@ -1,0 +1,46 @@
+
+.vertical-menu {
+    width: 200px;
+height:100%;
+    background-color: #eee;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: grey;
+    color: white;
+}
+.btn{
+
+width:  500px;
+display: block;
+  margin : auto;
+}
+form{
+ border-width:2px;
+border-radius: 20px;
+border-style:outset;
+width:650px;
+height:550px;
+padding:20px;
+}
+.col-sm-10  {
+width: 300px;
+display: block;
+  margin : auto;
+
+}
+
+

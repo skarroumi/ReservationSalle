@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titre }}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.js' %}" />
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+         <link rel="stylesheet" type="text/css" href="{% static 'jquery-3.3.1.min.js' %}" />
+       <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+</head>
+<body>
+<header>
+
+<h1>{{ titre }}</h1>
+<hr/>
+<div class="loginbox">
+    <img  src="{% static 'images/login_logo.jpg' %}"  class="avantar">
+
+<h1>{{ titre }}</h1>
+
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="" value='{{ titre }}'/>
+</form>
+</div>
+    </header>
+</body>
+</html>

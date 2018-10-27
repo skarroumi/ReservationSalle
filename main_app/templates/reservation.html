@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.js' %}" />
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+         <link rel="stylesheet" type="text/css" href="{% static 'jquery-3.3.1.min' %}" />
+    <link href="{% static 'style_test2.css' %}"  rel="stylesheet" type="text/css" />
+    <link href="{% static 'profile_prof.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-sm bg-info navbar-dark" style="width:100% ;height:70px">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    <img src="{% static 'images/estc.png' %}" alt="logo" style="width:160px; height:68px;">
+  </a>
+</nav>
+
+    <div class="row">
+  <div class="col-sm-3">
+
+
+
+
+      <div class="vertical-menu" style="height: 700px;">
+  <a href="{% url 'home_prof' %}" class="active">Accueil</a>
+          <a href="{% url 'reservation' %}">Reserver </a>
+          <a href="{% url 'history' %}">Mes Reservations </a>
+  <a href="{% url 'profil' %}">Profil</a>
+
+  <a href="{% url 'logout' %}">Deconnexion</a>
+
+</div>
+
+</div>
+
+
+<form method="post" action="{% url 'reservation' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if  erreur_reservation %}
+    <p>La salle choisie est deja reservee {{ jourReserve }} {{ semaineReserve }} {{ crenReserve }}</p>
+    {% endif %}
+
+    {% if  erreur %}
+    <p>La salle choisie est deja reservee {{ jourReserve }} {{ semaineReserve }} {{ crenReserve }} pour un cours</p>
+    {% endif %}
+<button type="submit" class="btn btn-primary" style="width:300px;">Reserver</button>
+</form>
+
+
+
+
+<br><br><br><br><br><br>
+  <div class="form-group row">
+    <div class="col-sm-10">
+
+    </div>
+  </div>
+
+
+</form>
+ </div>
+ </div>
+</body>
+
+</html>

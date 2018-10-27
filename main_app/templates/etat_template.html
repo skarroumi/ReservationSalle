@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{% static 'profile_prof.css' %}" rel="stylesheet" type="text/css"/>
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark" style="width:100% ;height:70px">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    <img src="{% static 'images/estc.png' %}" alt="logo" style="width:160px; height:68px;">
+  </a>
+</nav>
+  <div class="row">
+  <div class="col-sm-3">
+
+
+
+
+      <div class="vertical-menu" style="height: 700px;">
+  <a href="{% url 'home_prof' %}" class="active">Accueil</a>
+          <a href="{% url 'reservation' %}">Reserver </a>
+          <a href="{% url 'history' %}">Mes Reservations </a>
+  <a href="{% url 'profil' %}">Profil</a>
+
+  <a href="{% url 'logout' %}">Deconnexion</a>
+
+</div>
+
+</div>
+<p>
+{% for i in var1 %}
+{{ i.Id_Salle }}
+{% endfor %}
+</p>
